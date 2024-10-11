@@ -9,13 +9,13 @@ namespace IMLledbar {
     let clockPin = DigitalPin.P2
     let reverse = false
 
-    //% block="ピン設定 %pin"
+    //% block="ピンを設定する %pin"
     //% weight=100   
     export function SetPin(pin: DigitalPin) {
         setpin(pin)
     }
 
-    //% block="LED表示 %level"
+    //% block="バーを点灯する %level"
     //% weight=100   
     export function SetLedBar(level: number) {
         setLevel(level)
