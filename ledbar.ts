@@ -7,7 +7,6 @@ namespace IMLledbar {
     // LEDバーの制御ピンの設定
     let dataPin = DigitalPin.P1
     let clockPin = DigitalPin.P2
-    let reverse = false
 
     //% block="ピンを設定する %pin"
     //% weight=100   
@@ -76,7 +75,10 @@ namespace IMLledbar {
     }
 
     // LEDバーの点灯レベルを設定
-    function setLevel(val: number, brightness: number = 255) {
+    function setLevel(level: number) 
+    {
+        let val = Math.floor( level/10 )
+        let brightness = level % 10
         begin()
         for (let i = 0 ; i < 10 ; i++) {
             write16(val > i ? brightness : 0)
