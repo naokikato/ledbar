@@ -82,7 +82,7 @@ namespace IMLledbar {
         for (let i = 0 ; i < 10 ; i++) {
             if( val > i )   write16( 255 )
             else
-            if( val == i )  write16( level%10 )
+            if( val == i )  write16( (level%10)*255/10 )
             else
             write16(0)
         }        
